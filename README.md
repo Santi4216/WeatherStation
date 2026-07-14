@@ -91,6 +91,7 @@ The `pygame` package is optional. If it is not installed, the application still 
 3. Install the Python dependencies.
 4. Upload the ESP32 firmware located in `esp32_estacion_meteorologica/`.
 5. Update the WiFi credentials in the Arduino sketch (`ssid` and `password`) before compiling. The repository includes placeholder values only.
+	Replace `TU_SSID_AQUI` and `TU_PASSWORD_AQUI` in the `.ino` file with your own WiFi credentials before uploading the firmware.
 6. Confirm the ESP32 IP address and set it in `config.py`.
 
 ## How to Run
@@ -165,9 +166,9 @@ Academic project developed at Universidad Militar Nueva Granada. See "My Individ
 
 Team members:
 
-- N/A
-- N/A
-- N/A
+- Karol Daniela Mosquera
+- David Santiago García Suárez
+- Santiago Rubiano Garzón
 
 ## License
 
@@ -260,6 +261,7 @@ El paquete `pygame` es opcional. Si no está instalado, la aplicación sigue fun
 3. Instala las dependencias de Python.
 4. Carga el firmware del ESP32 ubicado en `esp32_estacion_meteorologica/`.
 5. Actualiza las credenciales WiFi en el sketch de Arduino.
+	Reemplaza `TU_SSID_AQUI` y `TU_PASSWORD_AQUI` en el archivo `.ino` con tus propias credenciales WiFi antes de subir el firmware.
 6. Verifica la IP del ESP32 y configúrala en `config.py`.
 
 ## Cómo Ejecutar el Proyecto
@@ -334,9 +336,9 @@ Proyecto académico desarrollado en la Universidad Militar Nueva Granada. Ver "M
 
 Integrantes:
 
-- N/A
-- N/A
-- N/A
+- Karol Daniela Mosquera
+- David Santiago García Suárez
+- Santiago Rubiano Garzón
 
 ## Licencia
 
