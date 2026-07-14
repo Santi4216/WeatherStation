@@ -33,8 +33,8 @@
 
 // ==================== CONFIGURACIÓN WIFI ====================
 // Modo Cliente - La ESP32 se conecta a tu red WiFi
-const char* ssid = "SANTILAPTOP";           // Nombre de tu red WiFi
-const char* password = "180421600";         // Contraseña de tu red WiFi
+const char* ssid = "TU_SSID_AQUI";          // Reemplaza con el nombre de tu red WiFi
+const char* password = "TU_PASSWORD_AQUI";  // Reemplaza con la contraseña de tu red WiFi
 
 WebServer server(80);
 

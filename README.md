@@ -90,7 +90,7 @@ The `pygame` package is optional. If it is not installed, the application still 
 2. Create and activate a virtual environment if desired.
 3. Install the Python dependencies.
 4. Upload the ESP32 firmware located in `esp32_estacion_meteorologica/`.
-5. Update the WiFi credentials in the Arduino sketch.
+5. Update the WiFi credentials in the Arduino sketch (`ssid` and `password`) before compiling. The repository includes placeholder values only.
 6. Confirm the ESP32 IP address and set it in `config.py`.
 
 ## How to Run
