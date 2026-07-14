@@ -165,9 +165,9 @@ Academic project developed at Universidad Militar Nueva Granada. See "My Individ
 
 Team members:
 
-- Karol Daniela Mosquera
-- David Santiago García Suárez
-- Santiago Rubiano Garzón
+- N/A
+- N/A
+- N/A
 
 ## License
 
@@ -334,9 +334,9 @@ Proyecto académico desarrollado en la Universidad Militar Nueva Granada. Ver "M
 
 Integrantes:
 
-- Karol Daniela Mosquera
-- David Santiago García Suárez
-- Santiago Rubiano Garzón
+- N/A
+- N/A
+- N/A
 
 ## Licencia
 
