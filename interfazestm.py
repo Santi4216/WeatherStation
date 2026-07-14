@@ -4,9 +4,9 @@ Interfaz Gráfica Principal - Versión Mejorada
 Universidad Militar Nueva Granada
 
 Integrantes:
-- Karol Daniela Mosquera (7004097)
-- David Santiago García Suárez (7004823)  
-- Santiago Rubiano Garzón (7004147)
+- Karol Daniela Mosquera (N/A)
+- David Santiago García Suárez (N/A)  
+- Santiago Rubiano Garzón (N/A)
 
 Para ejecutar: python interfazestm.py
 """
@@ -26,9 +26,9 @@ import pyqtgraph as pg
 try:
     import pygame
     PYGAME_AVAILABLE = True
-except:
+except Exception as e:
     PYGAME_AVAILABLE = False
-    print("⚠️ pygame no disponible - alarmas sonoras desactivadas")
+    print(f"⚠️ pygame no disponible - alarmas sonoras desactivadas: {e}")
 
 from sensor_data import SensorDataManager, ESP32Communicator
 from config import (SENSORS, GRAPH_UPDATE_RATE, PROJECT_INFO, COLORS, DARK_THEME, 
@@ -299,8 +299,8 @@ class MainWindow(QMainWindow):
                 self.alarm_sound = None
                 if os.path.exists(ALARM_SOUND_FILE):
                     self.alarm_sound = pygame.mixer.Sound(ALARM_SOUND_FILE)
-            except:
-                print("⚠️ No se pudo inicializar el sistema de audio")
+            except Exception as e:
+                print(f"⚠️ No se pudo inicializar el sistema de audio: {e}")
                 self.alarm_sound = None
         else:
             self.alarm_sound = None
@@ -1150,14 +1150,14 @@ class MainWindow(QMainWindow):
             try:
                 if not pygame.mixer.get_busy():
                     self.alarm_sound.play(-1)
-            except:
-                pass
+            except Exception as e:
+                print(f"⚠️ Error al reproducir alarma: {e}")
         else:
             if self.alarm_sound:
                 try:
                     self.alarm_sound.stop()
-                except:
-                    pass
+                except Exception as e:
+                    print(f"⚠️ Error al detener alarma: {e}")
                     
     def activate_alarm(self, sensor_key, value):
         """Activa una alarma"""
@@ -1365,7 +1365,8 @@ class MainWindow(QMainWindow):
         if not os.path.exists(export_dir):
             try:
                 os.makedirs(export_dir)
-            except:
+            except Exception as e:
+                print(f"⚠️ No se pudo crear el directorio de exportación: {e}")
                 export_dir = "."  # Usar directorio actual si falla
         
         default_filename = os.path.join(export_dir, f"estacion_{time.strftime('%Y%m%d_%H%M%S')}")
@@ -1404,8 +1405,8 @@ class MainWindow(QMainWindow):
         if self.alarm_sound:
             try:
                 self.alarm_sound.stop()
-            except:
-                pass
+            except Exception as e:
+                print(f"⚠️ Error al detener alarma al cerrar: {e}")
         
         event.accept()
 

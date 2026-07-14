@@ -8,6 +8,7 @@ import requests
 import numpy as np
 from collections import deque
 from PyQt5.QtCore import QThread, pyqtSignal, QObject
+from typing import Any, Dict, Optional, Tuple
 from config import (SENSORS, GRAPH_MAX_POINTS, ESP32_IP, ESP32_PORT, 
                     CONNECTION_TIMEOUT, STATS_WINDOW_SECONDS)
 
@@ -15,7 +16,7 @@ from config import (SENSORS, GRAPH_MAX_POINTS, ESP32_IP, ESP32_PORT,
 class SensorDataManager:
     """Gestor de datos de sensores con estadísticas en tiempo real"""
     
-    def __init__(self):
+    def __init__(self) -> None:
         # Almacenamiento de datos por sensor
         self.data = {}
         self.timestamps = {}
@@ -30,7 +31,7 @@ class SensorDataManager:
         self.stats = {}
         self.last_values = {}
         
-    def add_data(self, sensor_key, value, timestamp=None):
+    def add_data(self, sensor_key: str, value: float, timestamp: Optional[float] = None) -> None:
         """Agrega un nuevo dato para un sensor"""
         if sensor_key not in self.data:
             return
@@ -47,7 +48,7 @@ class SensorDataManager:
         # Actualizar estadísticas
         self.update_stats(sensor_key)
         
-    def get_plot_data(self, sensor_key):
+    def get_plot_data(self, sensor_key: str) -> Tuple[np.ndarray, np.ndarray]:
         """Obtiene los datos para graficar"""
         if sensor_key not in self.data or len(self.data[sensor_key]) == 0:
             return np.array([]), np.array([])
@@ -57,13 +58,13 @@ class SensorDataManager:
         
         return timestamps, values
         
-    def get_current_value(self, sensor_key):
+    def get_current_value(self, sensor_key: str) -> float:
         """Obtiene el valor actual de un sensor"""
         if sensor_key in self.last_values:
             return self.last_values[sensor_key]
         return 0.0
         
-    def get_sensor_status(self, sensor_key):
+    def get_sensor_status(self, sensor_key: str) -> str:
         """Determina el estado del sensor"""
         if sensor_key not in self.last_values:
             return 'Sin datos'
@@ -79,7 +80,7 @@ class SensorDataManager:
             
         return 'OK'
         
-    def update_stats(self, sensor_key):
+    def update_stats(self, sensor_key: str) -> None:
         """Actualiza estadísticas para un sensor"""
         if sensor_key not in self.data or len(self.data[sensor_key]) == 0:
             return
@@ -112,7 +113,7 @@ class SensorDataManager:
                 'count': 0
             }
             
-    def get_stats(self, sensor_key):
+    def get_stats(self, sensor_key: str) -> Dict[str, Any]:
         """Obtiene las estadísticas de un sensor"""
         return self.stats.get(sensor_key, {
             'min': 0.0,
@@ -123,7 +124,7 @@ class SensorDataManager:
             'count': 0
         })
         
-    def clear_data(self):
+    def clear_data(self) -> None:
         """Limpia todos los datos almacenados"""
         for sensor_key in SENSORS.keys():
             self.data[sensor_key].clear()
@@ -132,7 +133,7 @@ class SensorDataManager:
         self.stats.clear()
         self.start_time = time.time()
         
-    def export_data_csv(self, filename):
+    def export_data_csv(self, filename: str) -> bool:
         """Exporta datos a archivo CSV"""
         import csv
         
@@ -181,7 +182,7 @@ class SensorDataManager:
             print(f"Error al exportar CSV: {e}")
             return False
             
-    def export_data_json(self, filename):
+    def export_data_json(self, filename: str) -> bool:
         """Exporta datos a archivo JSON"""
         import json
         
@@ -224,7 +225,7 @@ class ESP32Communicator(QThread):
     data_received = pyqtSignal(dict)
     connection_status = pyqtSignal(bool, str)
     
-    def __init__(self, ip, port):
+    def __init__(self, ip: str, port: int) -> None:
         super().__init__()
         self.ip = ip
         self.port = port
@@ -233,7 +234,7 @@ class ESP32Communicator(QThread):
         self.session = requests.Session()
         self.url = f"http://{self.ip}:{self.port}/data"
         
-    def run(self):
+    def run(self) -> None:
         """Loop principal de comunicación"""
         self.running = True
         consecutive_errors = 0
@@ -296,7 +297,7 @@ class ESP32Communicator(QThread):
             # Pequeña pausa entre peticiones (100ms = 10 peticiones/segundo)
             self.msleep(100)
             
-    def stop(self):
+    def stop(self) -> None:
         """Detiene el thread de comunicación"""
         self.running = False
         self.wait()

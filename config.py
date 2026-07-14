@@ -5,9 +5,9 @@ Asignatura: Sensores y Laboratorio
 Docente: Paola Andrea Castiblanco Moreno
 
 Integrantes:
-- Karol Daniela Mosquera (7004097)
-- David Santiago García Suárez (7004823)
-- Santiago Rubiano Garzón (7004147)
+- Karol Daniela Mosquera (N/A)
+- David Santiago García Suárez (N/A)
+- Santiago Rubiano Garzón (N/A)
 
 Archivo de configuración global
 """
@@ -22,20 +22,20 @@ PROJECT_INFO = {
         {
             'nombre': 'Karol Daniela Mosquera',
             'programa': 'Ingeniería Mecatrónica',
-            'codigo': '7004097',
-            'email': 'est.karol.mosquera@unimilitar.edu.co'
+            'codigo': 'N/A',
+            'email': 'N/A'
         },
         {
             'nombre': 'David Santiago García Suárez',
             'programa': 'Ingeniería Mecatrónica',
-            'codigo': '7004823',
-            'email': 'est.davids.garcias@unimilitar.edu.co'
+            'codigo': 'N/A',
+            'email': 'N/A'
         },
         {
             'nombre': 'Santiago Rubiano Garzón',
             'programa': 'Ingeniería Mecatrónica',
-            'codigo': '7004147',
-            'email': 'est.santiago.rubia@unimilitar.edu.co'
+            'codigo': 'N/A',
+            'email': 'N/A'
         }
     ]
 }
