@@ -2,10 +2,7 @@
 
 Desktop application for real-time monitoring of an ESP32-based weather station. This project combines embedded data acquisition, WiFi communication, statistical processing, historical visualization, and a modern PyQt5 interface designed for laboratory and educational use.
 
-[![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
-[![PyQt5](https://img.shields.io/badge/GUI-PyQt5-41CD52)](https://pypi.org/project/PyQt5/)
-[![ESP32](https://img.shields.io/badge/Hardware-ESP32-E7352C)](https://www.espressif.com/)
-[![License](https://img.shields.io/badge/Use-Academic%20Project-0EA5E9)]()
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/) [![PyQt5](https://img.shields.io/badge/GUI-PyQt5-41CD52)](https://pypi.org/project/PyQt5/) [![ESP32](https://img.shields.io/badge/Hardware-ESP32-E7352C)](https://www.espressif.com/) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 ## Interface Preview / Vista de la Interfaz
 
@@ -13,18 +10,22 @@ Desktop application for real-time monitoring of an ESP32-based weather station. 
 
 The image above shows the current layout of the application: sensor cards on the left, the live graph in the center, and control and statistics areas along the bottom. The same interface is used in the Spanish documentation below.
 
+## My Individual Contribution
+
+I designed and developed the software for this project: the ESP32 firmware, the HTTP API, and the full PyQt5 desktop application, including data visualization, statistics, alarm handling, and export tools. My teammates handled the physical assembly and signal conditioning circuits. This repository reflects my code contribution to a group deliverable.
+
 ## Project Overview
 
-This system receives live measurements from an ESP32 and presents them in a graphical interface with sensor cards, trend plots, alarms, statistics, and data export tools. It was developed as an academic engineering project at Universidad Militar Nueva Granada and is intended to demonstrate a complete end-to-end instrumentation workflow.
+This system receives live measurements from an ESP32 and presents them in a graphical interface with sensor cards, trend plots, alarms, statistics, and data export tools. It was developed as an academic engineering project at Universidad Militar Nueva Granada and is intended to demonstrate a complete instrumentation workflow.
 
-The solution is divided into two main parts:
+The solution is divided into two parts:
 
 - An ESP32 firmware that reads the sensors and exposes the data through a lightweight HTTP service.
 - A Python desktop application that consumes the data, analyzes it, and displays it in real time.
 
 ## Key Features
 
-- Real-time monitoring of four environmental variables: light intensity, temperature, wind speed, and altitude.
+- Real-time monitoring of light intensity, temperature, wind speed, and altitude.
 - PyQt5 desktop interface with a dark visual theme and responsive layout.
 - Live trend charts powered by PyQtGraph.
 - Sensor cards with current value, unit, and status indicator.
@@ -160,7 +161,7 @@ This project is suitable for a CV or portfolio because it demonstrates:
 
 ## Credits
 
-Academic project developed at Universidad Militar Nueva Granada.
+Academic project developed at Universidad Militar Nueva Granada. See "My Individual Contribution" above for a breakdown of authorship.
 
 Team members:
 
@@ -168,17 +169,25 @@ Team members:
 - David Santiago García Suárez
 - Santiago Rubiano Garzón
 
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
 ---
 
 # Sistema de Monitoreo de Estación Meteorológica
 
 Aplicación de escritorio para el monitoreo en tiempo real de una estación meteorológica basada en ESP32. El proyecto integra adquisición de datos embebidos, comunicación por WiFi, procesamiento estadístico, visualización histórica y una interfaz moderna desarrollada con PyQt5, pensada para uso académico, de laboratorio y como proyecto de portafolio profesional.
 
+## Mi Contribución Individual
+
+Diseñé y desarrollé el software de este proyecto: el firmware del ESP32, la API HTTP y toda la aplicación de escritorio en PyQt5, incluyendo visualización de datos, motor de estadísticas, sistema de alarmas y herramientas de exportación. Mis compañeros de equipo se encargaron del montaje físico y los circuitos de acondicionamiento de señal. Este repositorio refleja mi aporte de código dentro de una entrega grupal.
+
 ## Descripción General
 
 El sistema recibe mediciones en vivo desde un ESP32 y las presenta en una interfaz gráfica con tarjetas de sensores, gráficas de tendencia, alarmas, estadísticas y herramientas de exportación. Fue desarrollado como proyecto académico de ingeniería en la Universidad Militar Nueva Granada y busca mostrar un flujo completo de instrumentación de extremo a extremo.
 
-La solución se divide en dos partes principales:
+La solución se divide en dos partes:
 
 - Un firmware para ESP32 que lee los sensores y expone los datos mediante un servicio HTTP liviano.
 - Una aplicación de escritorio en Python que consume los datos, los analiza y los visualiza en tiempo real.
@@ -321,10 +330,14 @@ Este proyecto es adecuado para incluirse en un CV o portafolio porque demuestra:
 
 ## Créditos
 
-Proyecto académico desarrollado en la Universidad Militar Nueva Granada.
+Proyecto académico desarrollado en la Universidad Militar Nueva Granada. Ver "Mi Contribución Individual" arriba para el detalle de autoría.
 
 Integrantes:
 
 - Karol Daniela Mosquera
 - David Santiago García Suárez
 - Santiago Rubiano Garzón
+
+## Licencia
+
+Este proyecto está bajo la licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
