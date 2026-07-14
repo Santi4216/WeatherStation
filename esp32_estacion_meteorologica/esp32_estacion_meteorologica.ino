@@ -6,9 +6,9 @@
  * =====================================================================
  * 
  * Integrantes:
- * - N/A
- * - N/A
- * - N/A
+ * - Karol Daniela Mosquera
+ * - David Santiago García Suárez
+ * - Santiago Rubiano Garzón
  * 
  * Descripción:
  * Este código lee datos de los siguientes sensores y los envía por WiFi:
