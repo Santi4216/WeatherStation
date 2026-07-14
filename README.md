@@ -26,6 +26,7 @@ The solution is divided into two parts:
 ## Key Features
 
 - Real-time monitoring of light intensity, temperature, wind speed, and altitude.
+- Temperature readings smoothed using a Kalman filter to reduce sensor noise and improve measurement stability.
 - PyQt5 desktop interface with a dark visual theme and responsive layout.
 - Live trend charts powered by PyQtGraph.
 - Sensor cards with current value, unit, and status indicator.
@@ -60,7 +61,7 @@ The solution is divided into two parts:
 The ESP32 firmware reads the following sensors:
 
 - Light intensity sensor, reported as percentage.
-- PT100 temperature measurement, calibrated in degrees Celsius.
+- PT100 temperature measurement, calibrated in degrees Celsius, with Kalman filtering applied to reduce sensor noise.
 - Anemometer, converted to wind speed in km/h.
 - BMP280 barometric sensor, used to estimate altitude in meters.
 
@@ -196,6 +197,7 @@ La solución se divide en dos partes:
 ## Funcionalidades Principales
 
 - Monitoreo en tiempo real de cuatro variables ambientales: intensidad de luz, temperatura, velocidad del viento y altitud.
+- Lecturas de temperatura suavizadas mediante un filtro de Kalman para reducir el ruido del sensor y mejorar la estabilidad de la medición.
 - Interfaz de escritorio desarrollada con PyQt5 y tema oscuro.
 - Gráficas históricas en vivo con PyQtGraph.
 - Tarjetas de sensores con valor actual, unidad y estado.
@@ -230,7 +232,7 @@ La solución se divide en dos partes:
 El firmware del ESP32 lee los siguientes sensores:
 
 - Sensor de intensidad de luz, reportado en porcentaje.
-- Medición de temperatura PT100, calibrada en grados Celsius.
+- Medición de temperatura PT100, calibrada en grados Celsius, con filtrado Kalman aplicado para reducir el ruido del sensor.
 - Anemómetro, convertido a velocidad del viento en km/h.
 - Sensor barométrico BMP280, usado para estimar la altitud en metros.
 
