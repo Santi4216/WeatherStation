@@ -37,6 +37,8 @@ const char* ssid = "TU_SSID_AQUI";          // Reemplaza con el nombre de tu red
 const char* password = "TU_PASSWORD_AQUI";  // Reemplaza con la contraseña de tu red WiFi
 
 WebServer server(80);
+unsigned long ultimoIntentoReconexionWiFi = 0;
+const unsigned long INTERVALO_RECONEXION_WIFI = 10000;
 
 // ==================== PINES GPIO ====================
 #define PIN_LUZ 35              // Sensor de luz analógico
@@ -399,6 +401,8 @@ void setup() {
   // Configurar WiFi en modo Cliente (Station)
   Serial.println("\n📡 Configurando WiFi...");
   WiFi.mode(WIFI_STA);
+  WiFi.persistent(false);
+  WiFi.setAutoReconnect(true);
   WiFi.begin(ssid, password);
   
   Serial.print("Conectando a WiFi");
@@ -438,8 +442,26 @@ void setup() {
   Serial.println("=============================================\n");
 }
 
+void manejarReconexionWiFi() {
+  if (WiFi.status() == WL_CONNECTED) {
+    return;
+  }
+
+  unsigned long tiempoActual = millis();
+  if (tiempoActual - ultimoIntentoReconexionWiFi < INTERVALO_RECONEXION_WIFI) {
+    return;
+  }
+
+  ultimoIntentoReconexionWiFi = tiempoActual;
+  Serial.println("⚠️ WiFi desconectado, intentando reconectar...");
+  WiFi.disconnect(false);
+  WiFi.begin(ssid, password);
+}
+
 // ==================== LOOP ====================
 void loop() {
+  manejarReconexionWiFi();
+
   // Manejar peticiones del servidor web
   server.handleClient();
   
