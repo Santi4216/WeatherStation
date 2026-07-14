@@ -6,9 +6,9 @@
  * =====================================================================
  * 
  * Integrantes:
- * - Karol Daniela Mosquera (7004097)
- * - David Santiago García Suárez (7004823)
- * - Santiago Rubiano Garzón (7004147)
+ * - Karol Daniela Mosquera (N/A)
+ * - David Santiago García Suárez (N/A)
+ * - Santiago Rubiano Garzón (N/A)
  * 
  * Descripción:
  * Este código lee datos de los siguientes sensores y los envía por WiFi:
